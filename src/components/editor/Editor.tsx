@@ -7,7 +7,7 @@ import * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api'
 import { useMonaco } from '@hooks'
 import { editorProps } from './types'
 import { getOrCreateModel, isUndefined } from '@utils'
-import MonacoContainer from '../monacoContainer'
+import MonacoContainer from '../monaco-container'
 
 export default defineComponent({
   props: editorProps,

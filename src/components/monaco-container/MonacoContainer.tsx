@@ -11,27 +11,23 @@ export default defineComponent({
       const { width, height } = props
       return normalizeStyle({
         ...styles.wrapper,
-        width, 
+        width,
         height,
       })
     })
 
     const containerStyle = computed(() => {
-      return normalizeStyle({ 
-        ...styles.fullWidth, 
-        ...(!props.isEditorReady && styles.hide)
+      return normalizeStyle({
+        ...styles.fullWidth,
+        ...(!props.isEditorReady && styles.hide),
       })
     })
 
     return () => (
       <div style={wrapperStyle.value}>
         {!props.isEditorReady && <Loading>{slots.default?.()}</Loading>}
-        <div
-          ref={props.setContainerRef as any}
-          style={containerStyle.value}
-          class={props.className}
-        />
+        <div ref={props.setContainerRef as any} style={containerStyle.value} class={props.className} />
       </div>
     )
-  }
+  },
 })
